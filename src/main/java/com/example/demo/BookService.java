@@ -29,8 +29,4 @@ public class BookService {
     public List<Book> getBooksByAuthor(Long authorId){
         return bookRepository.findByAuthorId(authorId);
     }
-
-    public Book getBookById(Long id) {
-        return bookRepository.findBookById(bookId);
-    }
 }

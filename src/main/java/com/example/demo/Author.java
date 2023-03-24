@@ -10,6 +10,7 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Author name is required")
     private String name;
 
     @OneToMany(mappedBy = "author")

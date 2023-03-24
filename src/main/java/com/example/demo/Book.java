@@ -8,9 +8,12 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank("Book title is required")
     private String title;
 
     @ManyToOne
+    @JoinColumn(name = "authod_id")
+    @NotNull(message = "Author is required")
     private Author author;
 
     public Book(Long id, String title, Author author) {
