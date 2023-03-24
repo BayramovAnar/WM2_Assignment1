@@ -1,6 +1,8 @@
 package com.example.demo;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Book {
@@ -8,11 +10,11 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank("Book title is required")
+    @NotBlank(message = "Book title is required")
     private String title;
 
     @ManyToOne
-    @JoinColumn(name = "authod_id")
+    @JoinColumn(name = "author_id")
     @NotNull(message = "Author is required")
     private Author author;
 

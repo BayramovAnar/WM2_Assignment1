@@ -29,4 +29,8 @@ public class AuthorService {
     public List<Author> getAuthorsByBook(Long bookId){
         return authorRepository.findByBooksId(bookId);
     }
+
+    public Author getAuthorById(Long id) {
+        return authorRepository.getReferenceById(id);
+    }
 }
